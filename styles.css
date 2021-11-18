@@ -1,0 +1,240 @@
+/*universal styles*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+    /*colors*/
+    --blue: hsl(223, 87%, 63%);
+    --paleblue: hsl(223, 100%, 88%);
+    --lightred: hsl(354, 100%, 66%);
+    --gray: hsl(0, 0%, 59%);
+    --verydarkblue: hsl(209, 33%, 12%);
+
+    /*fonts*/
+    --libre: 'Libre Franklin', sans-serif;
+    --libreLight: 300;
+    --libreMedium: 600;
+    --libreBold: 700;
+
+    --h1Size: 22pt;
+    --h2Size: 12pt;
+    --pSize: 10pt;
+    --submitSize: 12pt;
+
+    --h1Color: var(--gray);
+    --h2Color: var(--verydarkblue);
+    --pColor: var(--gray);
+    --strongColor: var(--verydarkblue);
+}
+
+body {
+    margin: 0;
+    font-family: var(--libre);
+}
+
+h1 {
+    font-size: var(--h1Size);
+    font-weight: var(--libreLight);
+    color: var(--h1Color);
+    text-align: center;
+}
+
+h2 {
+    font-size: var(--h2Size);
+    font-weight: var(--libreLight);
+    color: var(--h2Color);
+    text-align: center;
+}
+
+p {
+    font-size: var(--pSize);
+    font-weight: var(--libreLight);
+    color: var(--pColor);
+    text-align: center;
+}
+
+ion-icon {
+    height: 25px;
+    width: 25px;
+    color: var(--blue);
+}
+
+strong {
+    color: var(--strongColor);
+}
+/*layout styles*/
+main.main-container {
+    margin: 15% 5% 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+section.one {
+    margin: 0 auto;
+}
+
+section.two {
+    margin-top: 10%;
+}
+
+section.three {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+section.four {
+    margin-top: 10%;
+}
+
+div.social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10% 30% 0% 30%;
+}
+
+/*content styles*/
+img.logo {
+    width: 90px;
+    height: 30px;
+}
+img.webpage {
+    width: 100%;
+}
+
+input.email {
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--gray);
+    border-radius: 30px;
+    color: var(--gray);
+    text-indent: 5%;
+    font-size: var(--h2Size);
+    opacity: 0.8;
+}
+
+p.error {
+    display: none;
+    color: var(--lightred);
+    font-style: italic;
+    font-size: var(--h2Size);
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+p.with-error {
+    display: block;
+}
+
+input.invalid {
+    border: 1px solid var(--lightred);
+}
+
+input.submit {
+    margin-top: 5%;
+    width: 100%;
+    height: 50px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    color: white;
+    background: var(--blue);
+    font-size: var(--h2Size);
+}
+
+input.submit:hover {
+    box-shadow: 0px 5px 5px 5px hsl(223, 100%, 88%, 0.8);
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+    main.main-container {
+        margin: 5% 20% 5% 20%;
+    }
+    img.logo {
+        width: 120px;
+        height: 40px;
+    }
+
+    form.form {
+        display: grid;
+        grid-template-columns: [first] 65% [second] 30% [end];
+        grid-template-rows: [first] 100%;
+        grid-template-areas: 
+        "one two"
+        ;
+        column-gap: 25px;
+    }
+
+    div.email-container {
+        grid-column-start: first;
+        grid-column-end: second;
+        grid-row-start: first;
+        grid-row-end: end;
+        grid-area: one;
+        align-self: end;
+    }
+
+    input.submit {
+        grid-column-start: second;
+        grid-column-end: end;
+        grid-row-start: first;
+        grid-row-end: end;
+        grid-area: two;
+        margin-top: 0;
+    }
+
+    ion-icon {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    h1 {
+        font-size: 36pt;
+    }
+
+    h2 {
+        font-size: 24pt;
+    }
+    div.email-container {
+        display: grid;
+        grid-template-columns: [first] 70% [second] 25% [end];
+        grid-template-rows: [first] 100%;
+        grid-template-areas: 
+        "one two"
+        ;
+        column-gap: 25px;
+    }
+
+    input.email {
+        grid-column-start: first;
+        grid-column-end: second;
+        grid-row-start: first;
+        grid-row-end: end;
+        grid-area: one;
+        align-self: end;
+        font-size: 20pt;
+    }
+
+    input.submit {
+        grid-column-start: second;
+        grid-column-end: end;
+        grid-row-start: first;
+        grid-row-end: end;
+        grid-area: two;
+        margin-top: 0;
+        font-size: 20pt;
+    }
+
+    ion-icon {
+        height: 50px;
+        width: 50px;
+    }
+}
+/*attribution styles*/
+div.attribution-container {
+    margin-top: 10%;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: var(--blue); }
