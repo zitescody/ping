@@ -70,6 +70,7 @@ const proudOfThisFunc = () => {
 ### Useful resources
 
 - [Form Creation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) - Create a form
+- [Add to classList](https://www.w3schools.com/jsref/prop_element_classlist.asp) - classList addition
 
 
 ## Author
