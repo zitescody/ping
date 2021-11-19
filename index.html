@@ -10,25 +10,27 @@
 </head>
 <body>
   <main class="main-container">
-    <section class="container one">
+    <div class="container one">
       <img class="logo" alt="ping logo" aria-label="ping logo" src="./images/logo.svg">
-    </section>
-    <section class="container two">
+    </div>
+    <div class="container two">
       <h1 class="tag">We are launching <strong>soon!</strong></h1>
-      <h2 class="sub-tag">Subscribe and get notified</h2>
-    </section>
-    <section class="container three">
-      <form action="#" method="get" class="form" id="form">
-          <div class="email-container">
-            <input class="email" type="email" name="email" id="email" placeholder="Your email address..." required>
-            <p class="error">Please provide a valid email address</p>
-          </div>
-          <input class="submit" type="submit" name="submit" id="submit" value="Notify Me">
+      <p class="sub-tag">Subscribe and get notified</p>
+    </div>
+    <div class="container three">
+      <form class="form" novalidate>
+        <div class="form-container">
+          <label for="mail">
+            <input type="email" id="mail" name="mail" required minlength="8" placeholder="Your email address...">
+            <span class="error" aria-live="polite"></span>
+          </label>
+        </div>
+        <button class="submit">Notify Me!</button>
       </form>
-    </section>
-    <section class="container four">
+    </div>
+    <div class="container four">
       <img class="webpage" alt="webpage with graphs" aria-hidden="true" src="./images/illustration-dashboard.png">
-    </section>
+    </div>
   </main>
   <footer>
     <div class="social-container">

@@ -29,6 +29,9 @@
 body {
     margin: 0;
     font-family: var(--libre);
+    flex-direction: column; 
+    justify-content: center; 
+    min-height: 100vh;
 }
 
 h1 {
@@ -38,17 +41,10 @@ h1 {
     text-align: center;
 }
 
-h2 {
+p {
     font-size: var(--h2Size);
     font-weight: var(--libreLight);
     color: var(--h2Color);
-    text-align: center;
-}
-
-p {
-    font-size: var(--pSize);
-    font-weight: var(--libreLight);
-    color: var(--pColor);
     text-align: center;
 }
 
@@ -63,26 +59,28 @@ strong {
 }
 /*layout styles*/
 main.main-container {
-    margin: 15% 5% 5%;
+    margin: 5% 10% 5% 10%;
+}
+div.one {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
-section.one {
-    margin: 0 auto;
-}
-
-section.two {
+div.two {
     margin-top: 10%;
 }
 
-section.three {
+div.three {
     margin-top: 10%;
     display: flex;
     flex-direction: column;
 }
 
-section.four {
+label.mail {
+    display: flex;
+    flex-direction: column;
+}
+div.four {
     margin-top: 10%;
 }
 
@@ -102,35 +100,7 @@ img.webpage {
     width: 100%;
 }
 
-input.email {
-    width: 100%;
-    height: 50px;
-    border: 1px solid var(--gray);
-    border-radius: 30px;
-    color: var(--gray);
-    text-indent: 5%;
-    font-size: var(--h2Size);
-    opacity: 0.8;
-}
-
-p.error {
-    display: none;
-    color: var(--lightred);
-    font-style: italic;
-    font-size: var(--h2Size);
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-}
-
-p.with-error {
-    display: block;
-}
-
-input.invalid {
-    border: 1px solid var(--lightred);
-}
-
-input.submit {
+button.submit {
     margin-top: 5%;
     width: 100%;
     height: 50px;
@@ -141,18 +111,67 @@ input.submit {
     font-size: var(--h2Size);
 }
 
-input.submit:hover {
+button.submit:hover {
     box-shadow: 0px 5px 5px 5px hsl(223, 100%, 88%, 0.8);
     cursor: pointer;
+}
+
+/*form styles*/
+div.form-container {
+    display: block;
+}
+  
+input[type=email]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--gray);
+    border-radius: 30px;
+    color: var(--gray);
+    text-indent: 5%;
+    font-size: var(--h2Size);
+    opacity: 0.8;
+    box-sizing: border-box;
+}
+
+input:invalid{
+    border-color: #900;
+    background-color: #FDD;
+}
+  
+input:focus:invalid {
+    outline: none;
+}
+
+.error {
+    width  : 100%;
+    text-align: center;
+    font-size: var(--h2Size);
+    font-style: italic;
+    color: var(--lightred);
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+}
+  
+.error.active {
+    padding: 0.3em;
 }
 
 @media only screen and (min-width: 600px) {
     main.main-container {
         margin: 5% 20% 5% 20%;
     }
+
     img.logo {
         width: 120px;
         height: 40px;
+    }
+
+    ion-icon {
+        height: 40px;
+        width: 40px;
     }
 
     form.form {
@@ -165,7 +184,7 @@ input.submit:hover {
         column-gap: 25px;
     }
 
-    div.email-container {
+    div.form-container {
         grid-column-start: first;
         grid-column-end: second;
         grid-row-start: first;
@@ -174,7 +193,7 @@ input.submit:hover {
         align-self: end;
     }
 
-    input.submit {
+    button.submit {
         grid-column-start: second;
         grid-column-end: end;
         grid-row-start: first;
@@ -182,24 +201,25 @@ input.submit:hover {
         grid-area: two;
         margin-top: 0;
     }
-
-    ion-icon {
-        height: 40px;
-        width: 40px;
-    }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1280px) {
     h1 {
         font-size: 36pt;
     }
 
-    h2 {
+    p {
         font-size: 24pt;
     }
-    div.email-container {
+
+    ion-icon {
+        height: 50px;
+        width: 50px;
+    }
+
+    form.form   {
         display: grid;
-        grid-template-columns: [first] 70% [second] 25% [end];
+        grid-template-columns: [first] 75% [second] 20% [end];
         grid-template-rows: [first] 100%;
         grid-template-areas: 
         "one two"
@@ -207,30 +227,25 @@ input.submit:hover {
         column-gap: 25px;
     }
 
-    input.email {
+    div.form-container {
         grid-column-start: first;
         grid-column-end: second;
         grid-row-start: first;
-        grid-row-end: end;
         grid-area: one;
-        align-self: end;
-        font-size: 20pt;
+        justify-self: stretch;
+        font-size: 18pt;
     }
 
-    input.submit {
+    button.submit {
         grid-column-start: second;
         grid-column-end: end;
         grid-row-start: first;
         grid-row-end: end;
         grid-area: two;
         margin-top: 0;
-        font-size: 20pt;
+        font-size: 18pt;
     }
 
-    ion-icon {
-        height: 50px;
-        width: 50px;
-    }
 }
 /*attribution styles*/
 div.attribution-container {
